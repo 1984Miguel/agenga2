@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    @keyframes caja{
+        0%
+        {
+            background-color: deeppink;
+            }
+        50%
+        {
+            transform: scale(2) rotate(90deg);
+            
+            background-color: chartreuse;
+          
+        }
+        100%
+        {
+            transform: scale(1);
+            background-color: dimgray;
+            color: dimgray;
+        }
+
+    }
+    div{
+
+        width: 200px;
+        height: 200px;
+        background-color: purple;
+        animation: caja 10s;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <div></div>
+    
+</body>
+</html>

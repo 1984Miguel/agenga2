@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geolocalizacion</title>
+    </head>
+    <body>
+    <script>
+        // comprobamos que la api de geolocalizacion esta disponible
+        if(navigator.geolocation) 
+        {
+            // obtenemos posicion del usuario
+            navigator.geolocation.getCurrentPosition(
+                // si todo ha ido bien
+                (data) =>{
+                    console.log(data);
+                },
+                (err)=>{
+                    console.error(error);
+                }
+
+
+            );
+
+        }
+        // si no esta disponible
+        else
+        {
+       
+            console.log("no esta disponible");
+        }
+    
+    </script>
+   
+
+    </body>
+    </html>

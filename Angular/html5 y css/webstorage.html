@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //comprobamos que web storagage esta disponible
+        if(typeof(Storage)!=="undefined")
+        {
+            // Escribimos un valor en el almacen local
+            localStorage.setItem("valorEnLocal", "Buenos dias");
+            // recuperamos valor almacen local  
+            let mensaje = localStorage.getItem("valorEnLocal");
+
+            alert(mensaje);
+
+
+        }
+        else{
+            alert("El navegador no soporta storage")
+        }
+    
+    </script>
+    
+</body>
+</html>
