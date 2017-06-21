@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
+import {ContactosService} from './contactos.service';
 
 @NgModule({
   //Componentes directivas y pipes de mi aplicacion
@@ -15,9 +16,11 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
     BrowserModule
   ],
 
-  // unducamos los proveedores de aquellas piezas que sean susceptibles
+  // indicamos los proveedores de aquellas piezas que sean susceptibles
   //de ser inyectadas como dependencias
-  providers: [],
+  providers: [
+    ContactosService
+  ],
 
   //indicamos componente raiz primero que se instanciara
   bootstrap: [AppComponent]

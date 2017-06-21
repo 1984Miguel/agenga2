@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactosService} from "./contactos.service";
 
 @Component({
   //indicamos el elemento html donde se instanciara este componente
@@ -14,19 +15,25 @@ export class AppComponent implements OnInit {
 
 //coleccion de contactos a pasar al hijo
   contactos: string[] ;
-  //constructor () {}
+  
+
+  //para hacer una ina inyeccion de dependencias necesitamos
+  //hacerlo en el constructor de la clase tenemos que indicar un
+  //paramertro con modificador de acceso. Ademas
+  //tenemos que anotar su tipo, que no es otro que el servicio a 
+  //intectar
+  constructor(private _contactosService: ContactosService) {}
 
   ngOnInit()
   {
-    //coleccion de contactos a pasar al hijo
-    //hooh on init actualizamos datos contacto
-
-     this.contactos = [
-        'Peter Grifing',
-        'Thyler Dourden',
-        'Homer Simson',
-         'Jack Sparrow'
-
-     ];
+    this.contactos= this._contactosService.obtenerContactos();
   }
+
+eliminarContacto(contacto: string):void{
+  this._contactosService.eliminarContacto(contacto);
+  this.contactos=  this._contactosService.obtenerContactos();
+ 
+
+}
+  
 }

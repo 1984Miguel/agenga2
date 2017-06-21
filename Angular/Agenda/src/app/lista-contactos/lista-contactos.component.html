@@ -2,6 +2,17 @@
 
     <!-- con la directiva NgFor iteramos una coleccion
     ser referencia en la variable pintada-->
-<li *ngFor="let contacto of datos">   {{ contacto }} </li>
+<li *ngFor="let contacto of datos"
+[class.rojo]="esJackPeter(contacto)"
+[style.fontSize]="esHomer(contacto)">
+   {{ contacto }}
+
+
+
+    <!-- para hacer suscripciones a eventos ponemos en parentesis el nombre
+    del mismo . debemos asociar un manejadore el objeto $event-->
+    <button (click)="notificarEliminacion(contacto)">Eliminar</button>
+    
+     </li>
    
 </ul>
